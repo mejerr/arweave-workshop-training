@@ -221,7 +221,7 @@ const formStyle = css`
   flex-direction: column;
   align-items: flex-start;
   padding: 20px 0px 0px;
-`;
+`
 
 const labelStyle = css`
   margin: 0px 0px 5px;
