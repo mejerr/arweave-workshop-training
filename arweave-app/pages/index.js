@@ -1,18 +1,18 @@
-import { query, arweave, createVideoMeta } from '../utils'
-import { useEffect, useState } from 'react'
-import { css } from '@emotion/css'
+import { useEffect, useState } from 'react';
+import { query, arweave, createVideoMeta } from '../utils';
+import { css } from '@emotion/css';
 
 // basic exponential backoff in case of gateway timeout / error
-const wait = (ms) => new Promise((res) => setTimeout(res, ms))
+const wait = (ms) => new Promise((res) => setTimeout(res, ms));
 
 export default function Home() {
-  const [videos, setVideos] = useState([])
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    getVidoes()
+    getVideos();
   }, [])
 
-  async function getVidoes(depth = 0) {
+  async function getVideos(depth = 0) {
     try {
       const results = await arweave.api.post('/graphql', query)
         .catch(err => {
